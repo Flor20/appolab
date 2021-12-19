@@ -11,17 +11,19 @@ class TablaCard extends StatelessWidget {
 
     final prioridad = Container(
         height: 32.0,
-        width: 32.0,
+        width: 38.0,
         color: model.price == 3.5
             ? Colors.red
             
             : model.price == 2.25
                 ? Colors.yellow
                 : Colors.green,
-        child:  model.price == 3.5
-          ? Icon(Icons.cloud, color: model.price == 2.25 ? Colors.black : Colors.white)
+        child: Center(child:  model.price == 3.5
+          ? Text("\$"+model.price.toString(),style:const TextStyle(color: Colors.white, fontWeight: FontWeight.bold), textAlign: TextAlign.center,)
 
-          : Icon(Icons.circle,color: model.price == 5 ? Colors.black : Colors.white)
+          : Text("\$"+model.price.toString(),style: TextStyle(color: model.price == 5 ? Colors.black : Colors.white, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+        ) 
+        
     );
 
     return Card(
