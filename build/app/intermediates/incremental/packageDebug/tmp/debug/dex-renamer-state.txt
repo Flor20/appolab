@@ -1,4 +1,4 @@
-#Sun Dec 19 17:56:43 COT 2021
-base.0=C\:\\Users\\USUARIO\\Documents\\U ESPE Angel\\Oct21 - Mar22\\Desarrollo de aplicaciones moviles\\Flutter-apps\\Proyecto\\appolab\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
+#Tue Dec 21 18:31:34 COT 2021
+base.0=C\:\\Proyecto\\Flutter\\appolab\\appo_lab\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
+path.0=classes.dex

@@ -1,6 +1,9 @@
 import 'package:appo_lab/src/models/exam_model.dart';
 import 'package:appo_lab/src/services/exam_services.dart';
 import 'package:appo_lab/src/widgets/examen_card.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:appo_lab/src/providers/main_provider.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +25,24 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return _catalogo == null ? 
+    final mainProvider = Provider.of<MainProvider>(context, listen: true);
+    return Scaffold(
+      appBar: AppBar(
+        leading: SizedBox.square(
+          dimension: 60.0,
+              child: Switch(
+                  value: mainProvider.mode,
+                  onChanged: (bool value) async 
+                  {
+                    mainProvider.mode = value;
+                    final prefs = await SharedPreferences.getInstance();
+                    await prefs.setBool("mode", value);
+                  }
+              )
+        ),
+        title: const Text('Trifasic - ')
+      ),
+      body: _catalogo == null ? 
     const Center(
       child: SizedBox(
         height: 50, width: 50.0, child: CircularProgressIndicator()),
@@ -32,12 +52,12 @@ class _HomePageState extends State<HomePage> {
         child: SizedBox(child : Text('No hay datos de los Examenes')),
       )
     : Container(
-      decoration: const BoxDecoration(color: Colors.indigo),
       padding:
           const EdgeInsets.symmetric(vertical: 15.0, horizontal: 7.0),
       child: ListView(
           children: 
-            _catalogo!.map((e) => TablaCard(model: e,)).toList()));
+            _catalogo!.map((e) => TablaCard(model: e,)).toList())),
+    );
   }
 
   _downloadContent(){
