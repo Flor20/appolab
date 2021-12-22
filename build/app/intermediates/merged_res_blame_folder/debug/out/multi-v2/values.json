@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Proyecto\\Flutter\\appolab\\appo_lab\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\USUARIO\\Documents\\U ESPE Angel\\Oct21 - Mar22\\Desarrollo de aplicaciones moviles\\Flutter-apps\\Proyecto\\appolab\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Proyecto\\Flutter\\appolab\\appo_lab\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\USUARIO\\Documents\\U ESPE Angel\\Oct21 - Mar22\\Desarrollo de aplicaciones moviles\\Flutter-apps\\Proyecto\\appolab\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

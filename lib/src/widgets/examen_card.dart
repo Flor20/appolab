@@ -36,7 +36,7 @@ class TablaCard extends StatelessWidget {
         leading: CircleAvatar(backgroundImage: NetworkImage(url)),
         title: Text(
           model.name.toString(),
-          style: const TextStyle(fontSize: 18, color: Colors.black),
+          style: const TextStyle(fontSize: 18),
         ),
         
         subtitle: Text(model.description ?? ""),
