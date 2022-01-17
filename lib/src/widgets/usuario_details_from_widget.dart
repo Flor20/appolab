@@ -54,7 +54,7 @@ class _UsuarioDetailsFormWidgetState
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 7.0),
-                      child: Text("Ingresar imagen inicial",
+                      child: Text("Perfil",
                           style: Theme.of(context).textTheme.subtitle1),
                     ),
                     SizedBox(
@@ -63,7 +63,7 @@ class _UsuarioDetailsFormWidgetState
                       child: Padding(
                         padding: const EdgeInsets.all(7.0),
                         child: _imagen == null
-                            ? Image.asset('assets/images/generica.jpg')
+                            ? Image.asset('assets/images/usuario.jpeg')
                             : Image.file(_imagen!),
                       ),
                     ),
@@ -73,7 +73,8 @@ class _UsuarioDetailsFormWidgetState
                         ElevatedButton.icon(
                             onPressed: () => _selectImage(ImageSource.camera),
                             icon: const Icon(Icons.camera),
-                            label: const Text("Cámara")),
+                            label: const Text("Cámara")
+                            ),
                         ElevatedButton.icon(
                             onPressed: () => _selectImage(ImageSource.gallery),
                             icon: const Icon(Icons.image),
@@ -82,10 +83,10 @@ class _UsuarioDetailsFormWidgetState
                     ),
                     TextFormField(
                         keyboardType: TextInputType.text,
-                        initialValue: _usuario.nombre,
+                        initialValue: _usuario.username,
                         onSaved: (value) {
                           //Este evento se ejecuta cuando se cumple la validación y cambia el estado del Form
-                          _usuario.nombre = value.toString();
+                          _usuario.username = value.toString();
                         },
                         validator: (value) {
                           return _validateObservacion(value!);
@@ -133,7 +134,7 @@ class _UsuarioDetailsFormWidgetState
                           return _validateObservacion(value!);
                         },
                         decoration: const InputDecoration(
-                            labelText: "Direccion"),
+                            labelText: "Dirección"),
                         maxLength: 50,
                         maxLines: 1),
                     _onSaving
@@ -194,7 +195,7 @@ class _UsuarioDetailsFormWidgetState
   }
 
   String? _validateObservacion(String value) {
-    return (value.length < 25)
+    return (value.length < 5)
         ? "Debe ingresar un mensaje con al menos 25 caracteres"
         : null; //Validación se cumple al retorna null
   }

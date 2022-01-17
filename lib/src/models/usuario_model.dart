@@ -8,7 +8,7 @@ class Usuario {
     Usuario({
         this.id,
         this.img,
-        this.nombre,
+        this.username,
         this.numero,
         this.correo,
         this.direccion,
@@ -16,18 +16,18 @@ class Usuario {
 
     String? id;
     String? img;
-    String? nombre;
+    String? username;
     String? numero;
     String? correo;
     String? direccion;
 
     factory Usuario.created(String value) =>
-      Usuario(id: value, nombre: value);
+      Usuario(id: value, username: value);
 
     factory Usuario.fromJson(Map<String, dynamic> json) => Usuario(
         id: json["id"],
         img: json["img"],
-        nombre: json["nombre"],
+        username: json["username"],
         numero: json["numero"],
         correo: json["correo"],
         direccion: json["direccion"],
@@ -36,7 +36,7 @@ class Usuario {
     Map<String, dynamic> toJson() => {
         "id": id,
         "img": img,
-        "nombre": nombre,
+        "username": username,
         "numero": numero,
         "correo": correo,
         "direccion": direccion,

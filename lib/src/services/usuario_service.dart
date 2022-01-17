@@ -8,7 +8,7 @@ import 'package:appo_lab/src/models/usuario_model.dart';
 class UsuarioService {
   UsuarioService();
   //final String _rootUrl = "https://trifasic-backend-9bc1e.web.app/api/foto";
-  final String _rootUrl = "https://appo-backend.herokuapp.com/usuario";
+  final String _rootUrl = "https://appo-backend.herokuapp.com/datos-personales";
 
   Future<int> postUsuario(Usuario usuario) async {
     try {
@@ -27,7 +27,7 @@ class UsuarioService {
   }
 
   Future<String> uploadImage(File image) async {
-    final cloudinary = CloudinaryPublic('', '', cache: false);
+    final cloudinary = CloudinaryPublic('dnvtt9usn', 'ml_default', cache: false);
     try {
       CloudinaryResponse response = await cloudinary.uploadFile(
         CloudinaryFile.fromFile(image.path,
