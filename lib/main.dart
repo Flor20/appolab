@@ -1,9 +1,12 @@
+//import 'package:appo_lab/src/pages/usuario_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:appo_lab/src/providers/main_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:appo_lab/src/theme/main_theme.dart';
 import 'src/pages/home_page.dart';
+
+//import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 void main() {
   runApp(
@@ -34,7 +37,8 @@ class MyApp extends StatelessWidget {
                     debugShowCheckedModeBanner: false,
                     title: 'Flutter Demo',
                     theme: AppTheme.themeData(mainProvider.mode),
-                    home: const HomePage()));
+                    home: const HomePage(),
+                    ));
         }
         return const SizedBox.square(
               dimension: 100.0, child: CircularProgressIndicator());
