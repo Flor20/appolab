@@ -12,13 +12,13 @@ class UsuarioService {
 
   Future<int> postUsuario(Usuario usuario) async {
     try {
-      
+      final Map<String, String> _headers = {"content-type": "application/json"};
       String _usuarioBody = usuarioToJson(usuario);
       var url = Uri.parse(_rootUrl);
-      final response = await http.post(url, body: _usuarioBody);
+      final response = await http.post(url, headers: _headers, body: _usuarioBody);
       if (response.body.isEmpty) return 400;
-      Map<String, dynamic> content = json.decode(response.body);
-      return content["estado"];
+      //Map<String, dynamic> content = json.decode(response.body);
+      return json.decode(response.body);
     } catch (ex) {
       // ignore: avoid_print
       print(ex);

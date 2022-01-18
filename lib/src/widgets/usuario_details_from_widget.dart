@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:appo_lab/src/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:appo_lab/src/models/usuario_model.dart';
@@ -63,7 +64,7 @@ class _UsuarioDetailsFormWidgetState
                       child: Padding(
                         padding: const EdgeInsets.all(7.0),
                         child: _imagen == null
-                            ? Image.asset('assets/images/usuario.jpeg')
+                            ? Image.asset('assets/images/usuarios.jpeg')
                             : Image.file(_imagen!),
                       ),
                     ),
@@ -93,8 +94,8 @@ class _UsuarioDetailsFormWidgetState
                         },
                         decoration: const InputDecoration(
                             labelText: "Nombre"),
-                        maxLength: 50,
-                        maxLines: 1),
+                        maxLength: 50
+                        ),
                     TextFormField(
                         keyboardType: TextInputType.text,
                         initialValue: _usuario.numero,
@@ -107,8 +108,8 @@ class _UsuarioDetailsFormWidgetState
                         },
                         decoration: const InputDecoration(
                             labelText: "Número de teléfono"),
-                        maxLength: 50,
-                        maxLines: 1),
+                        maxLength: 50
+                        ),
                     TextFormField(
                         keyboardType: TextInputType.text,
                         initialValue: _usuario.correo,
@@ -121,8 +122,8 @@ class _UsuarioDetailsFormWidgetState
                         },
                         decoration: const InputDecoration(
                             labelText: "Correo electrónico"),
-                        maxLength: 50,
-                        maxLines: 1),
+                        maxLength: 50
+                        ),
                     TextFormField(
                         keyboardType: TextInputType.text,
                         initialValue: _usuario.direccion,
@@ -135,8 +136,8 @@ class _UsuarioDetailsFormWidgetState
                         },
                         decoration: const InputDecoration(
                             labelText: "Dirección"),
-                        maxLength: 50,
-                        maxLines: 1),
+                        maxLength: 50
+                        ),
                     _onSaving
                         ? const Padding(
                             padding: EdgeInsets.symmetric(vertical: 20.0),
@@ -148,6 +149,11 @@ class _UsuarioDetailsFormWidgetState
                               child: ElevatedButton.icon(
                                   onPressed: () {
                                     _sendForm();
+                                    Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const HomePage(),
+                                    ));
                                   },
                                   label: const Text("Guardar"),
                                   icon: const Icon(Icons.save)),

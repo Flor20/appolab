@@ -21,9 +21,6 @@ class Usuario {
     String? correo;
     String? direccion;
 
-    factory Usuario.created(String value) =>
-      Usuario(id: value, username: value);
-
     factory Usuario.fromJson(Map<String, dynamic> json) => Usuario(
         id: json["id"],
         img: json["img"],
@@ -34,7 +31,7 @@ class Usuario {
     );
 
     Map<String, dynamic> toJson() => {
-        "id": id,
+        //"id": id,
         "img": img,
         "username": username,
         "numero": numero,
