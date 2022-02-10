@@ -1,4 +1,0 @@
-#Mon Jan 17 19:54:22 COT 2022
-base.0=C\:\\Proyecto\\Flutter\\appolab\\appo_lab\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
